@@ -17,7 +17,7 @@
         </a-col>
       </a-row>
     </a-layout-header>
-    <a-layout-content>
+    <a-layout-content style="background-color: #fff;">
       <router-view />
     </a-layout-content>
     <a-layout-footer v-if="currentWithFooter">Footer</a-layout-footer>
