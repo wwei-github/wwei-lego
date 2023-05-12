@@ -17,22 +17,12 @@
             <user-outlined />
           </template>
         </a-input>
-        <a-input style="" v-model:value="userPassword" placeholder="验证码">
-        </a-input>
+        <a-input style="" v-model:value="userPassword" placeholder="验证码"></a-input>
         <div style="margin-top: 20px">
-          <a-button
-            style="margin-right: 10px"
-            type="primary"
-            @click="handleLogin"
-            >登录</a-button
-          >
-          <a-button
-            type="primary"
-            :disabled="!userPhone"
-            @click="queryInfo"
-            :loading="isLoading"
-            >获取验证码</a-button
-          >
+          <a-button style="margin-right: 10px" type="primary" @click="handleLogin">登录</a-button>
+          <a-button type="primary" :disabled="!userPhone" @click="queryInfo" :loading="isLoading">
+            获取验证码
+          </a-button>
         </div>
       </div>
     </div>
@@ -40,27 +30,27 @@
 </template>
 
 <script>
-import { ref } from "vue";
-import { UserOutlined } from "@ant-design/icons-vue";
-import { useRouter } from "vue-router";
+import { ref } from 'vue';
+import { UserOutlined } from '@ant-design/icons-vue';
+import { useRouter } from 'vue-router';
 export default {
-  name: "LoginPage",
+  name: 'LoginPage',
   components: {
     UserOutlined,
   },
   setup() {
-    const userPhone = ref("");
-    const userPassword = ref("");
+    const userPhone = ref('');
+    const userPassword = ref('');
     const isLoading = ref(false);
     const router = useRouter();
 
     function handleLogin() {
-      console.log("User: " + userPhone.value);
-      router.push({ path: "/", meta: { withHeader: true, withFooter: true } });
+      console.log('User: ' + userPhone.value);
+      router.push({ path: '/', meta: { withHeader: true, withFooter: true } });
     }
 
     function queryInfo() {
-      console.log("发送短信");
+      console.log('发送短信');
       isLoading.value = true;
     }
 
@@ -89,7 +79,7 @@ export default {
   height: 100%;
 }
 .login-left {
-  background-image: url("../assets/login.png");
+  background-image: url('../assets/login.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   display: flex;

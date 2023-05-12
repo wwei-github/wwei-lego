@@ -1,22 +1,22 @@
-import LoginPage from "../pages/LoginPage";
-import HomePage from "../pages/HomePage";
-import EditorPage from "../pages/EditorPage";
-import TemplateDetail from "../pages/TemplateDetail";
+import LoginPage from '../pages/LoginPage.vue';
+import HomePage from '../pages/HomePage.vue';
+import EditorPage from '../pages/EditorPage.vue';
+import TemplateDetail from '../pages/TemplateDetail.vue';
 
 const routes = [
   {
-    path: "/",
+    path: '/',
     component: HomePage,
     meta: { withHeader: true, withFooter: true },
   },
-  { path: "/login", component: LoginPage },
+  { path: '/login', component: LoginPage },
   {
-    path: "/editor",
+    path: '/editor',
     component: EditorPage,
     meta: { withHeader: true, withFooter: false },
   },
   {
-    path: "/template/:id",
+    path: '/template/:id',
     component: TemplateDetail,
     meta: { withHeader: true, withFooter: true },
   },

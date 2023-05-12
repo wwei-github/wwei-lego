@@ -14,13 +14,13 @@ import { useRouter } from 'vue-router';
 const router = useRouter();
 
 function toDetail() {
-    router.push({path:"/template/1"})
- }
+  router.push({ path: '/template/1' });
+}
 </script>
 
 <style>
-.template-card{
-    border-radius: 5px !important;
-    overflow: hidden;
+.template-card {
+  border-radius: 5px !important;
+  overflow: hidden;
 }
 </style>

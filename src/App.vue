@@ -17,7 +17,7 @@
         </a-col>
       </a-row>
     </a-layout-header>
-    <a-layout-content style="background-color: #fff;">
+    <a-layout-content style="background-color: #fff">
       <router-view />
     </a-layout-content>
     <a-layout-footer v-if="currentWithFooter">Footer</a-layout-footer>
@@ -25,11 +25,11 @@
 </template>
 
 <script setup>
-import { useRoute } from "vue-router";
-import { ref, computed } from "vue";
+import { useRoute } from 'vue-router';
+import { ref, computed } from 'vue';
 const route = useRoute();
-const currentWithHeader = computed(() => route.meta.withHeader);
-const currentWithFooter = computed(() => route.meta.withFooter);
+const currentWithHeader = computed(() => route?.meta.withHeader);
+const currentWithFooter = computed(() => route?.meta.withFooter);
 </script>
 
 <style>
