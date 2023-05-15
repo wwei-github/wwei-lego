@@ -5,14 +5,12 @@ const defaultTextTemplatesComponents: Partial<TextComponentProps>[] = [
     tag: 'h1',
     text: '大标题',
     fontSize: '20px',
-    width: '100px',
     position: 'relative',
   },
   {
     tag: 'p',
     text: '正文内容',
     fontSize: '16px',
-    width: '100px',
     position: 'relative',
   },
   {
@@ -34,7 +32,6 @@ const defaultTextTemplatesComponents: Partial<TextComponentProps>[] = [
     paddingBottom: '10px',
     paddingLeft: '5px',
     paddingRight: '5px',
-    width: '100px',
     tag: 'button',
     textAlign: 'center',
     position: 'relative',
