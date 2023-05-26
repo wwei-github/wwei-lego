@@ -1,3 +1,5 @@
+import { VNode } from 'vue';
+
 declare interface propsFormItem {
   component: string;
   subComponent?: string;
@@ -8,7 +10,7 @@ declare interface propsFormItem {
   extraProps?: {
     [k in string]: any;
   };
-  options?: { name: string; value: string }[];
+  options?: { name: string | VNode; value: string }[];
   eventName?: string;
   initTransformValue?: (v: any) => any;
   afterTransformValue?: (v: any) => any;

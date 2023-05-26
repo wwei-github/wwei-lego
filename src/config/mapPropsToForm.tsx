@@ -1,3 +1,27 @@
+import { PropsForm } from '@/types/mapPropsToForm';
+import { VNode } from 'vue';
+
+const fontFamilyArr = [
+  { name: '黑体', value: 'SimHei' },
+  { name: '宋体', value: 'SimSun' },
+  { name: '楷体', value: 'KaiTi' },
+  { name: '微软雅黑', value: 'Microsoft YaHei' },
+  { name: '翩翩体-简', value: 'Hanzipen SC' },
+];
+
+const fontFamilyOptions = fontFamilyArr.map(font => ({
+  value: font.value,
+  name: (
+    <span
+      style={{
+        fontFamily: font.value,
+      }}
+    >
+      {font.name}
+    </span>
+  ) as VNode,
+}));
+
 export const mapPropsToForm: Partial<PropsForm> = {
   text: {
     name: '文本',
@@ -38,6 +62,12 @@ export const mapPropsToForm: Partial<PropsForm> = {
       { name: '右', value: 'right' },
     ],
   },
+  color: {
+    name: '颜色',
+    valueProps: 'currentColor',
+    component: 'color-picker',
+    eventName: 'changeColor',
+  },
   fontFamily: {
     name: '字体',
     component: 'a-select',
@@ -45,11 +75,6 @@ export const mapPropsToForm: Partial<PropsForm> = {
     extraProps: {
       style: { width: '100px' },
     },
-    options: [
-      { name: '无', value: '' },
-      { name: '黑体', value: 'SimHei' },
-      { name: '宋体', value: '宋体' },
-      { name: '微软雅黑', value: 'Microsoft YaHei' },
-    ],
+    options: [{ name: '无', value: '' }, ...fontFamilyOptions],
   },
 };

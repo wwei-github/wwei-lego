@@ -7,7 +7,6 @@
 import {
   textDefaultProps,
   textStyleComponentProps,
-  transformToComponentProps
 } from '@/config/defaultProps';
 import useComponentCommon from '@/hooks/useComponentCommon';
 

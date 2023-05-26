@@ -4,6 +4,7 @@ import { createPinia } from 'pinia';
 import App from './App.vue';
 import routes from './routes/index';
 import './styles/reset.css';
+import ColorPicker from '@/components/ColorPicker.vue';
 
 import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/antd.css';
@@ -18,6 +19,6 @@ const app = createApp(App);
 
 const pinia = createPinia();
 
-app.use(router).use(Antd).use(pinia);
+app.use(router).use(Antd).use(pinia).component('color-picker', ColorPicker);
 
 app.mount('#app');

@@ -22,7 +22,7 @@
                 :key="k"
                 :[item.subValueProps!]="option.value"
               >
-                {{ option.name }}
+                <RenderVnode :vNode="option.name "/>
               </component>
             </template>
           </component>
@@ -36,6 +36,8 @@
 <script setup lang="ts">
 import { useGlobalStore } from '../stores/GlobalStore';
 import { mapPropsToForm } from '@/config/mapPropsToForm';
+import { propsFormItem } from '@/types/mapPropsToForm';
+import RenderVnode from './RenderVnode'
 import { reactive } from 'vue';
 
 interface FormProps extends propsFormItem {

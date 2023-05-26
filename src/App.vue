@@ -1,5 +1,6 @@
 <template>
   <a-layout>
+    <Uploader name="aaa" :beforeUpload="beforeUpload" action="https://www.mocky.io/v2/5cc8019d300000980a055e76"/>
     <a-layout-header v-if="currentWithHeader">
       <a-row>
         <a-col :span="12">
@@ -24,12 +25,19 @@
   </a-layout>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import Uploader from "@/components/Uploader.vue"
 import { useRoute } from 'vue-router';
-import { ref, computed } from 'vue';
+import { computed } from 'vue';
 const route = useRoute();
 const currentWithHeader = computed(() => route?.meta.withHeader);
 const currentWithFooter = computed(() => route?.meta.withFooter);
+
+
+function beforeUpload(file:File) {
+  return Promise.resolve(file);
+}
+
 </script>
 
 <style>
